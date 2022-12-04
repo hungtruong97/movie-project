@@ -1,8 +1,6 @@
 import actions from "./type";
 import requester from "app/api";
 import apiPath from "app/apiPath";
-import { getAllByText } from "@testing-library/react";
-import { type } from "@testing-library/user-event/dist/type";
 
 export const fetchBannerActions = async (next) => {
   try {
