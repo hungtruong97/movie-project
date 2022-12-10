@@ -27,9 +27,10 @@ export const fetchMovieActions = (page) => {
         params: {
           maNhom: "GP01",
           soTrang: page,
-          soPhanTuTrenTrang: 10,
+          soPhanTuTrenTrang: 4,
         },
       });
+      console.log(res.data.content);
       next({
         type: actions.SET_MOVIES,
         payload: res.data.content,
