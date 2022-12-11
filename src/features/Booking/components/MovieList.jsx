@@ -1,6 +1,7 @@
 import { Row, Col, Card, Button, Pagination } from "antd";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { fetchMovieActions } from "../redux/action";
 
 const MovieList = () => {
@@ -44,9 +45,11 @@ const MovieList = () => {
                 <p className="text-2xl my-2 h-40">
                   {item.moTa.substr(0, 100) + "..."}
                 </p>
-                <Button type="primary" size="large">
-                  Book
-                </Button>
+                <Link to={`/detail/${item.maPhim}`}>
+                  <Button type="primary" size="large">
+                    Book
+                  </Button>
+                </Link>
               </Card>
             </Col>
           );

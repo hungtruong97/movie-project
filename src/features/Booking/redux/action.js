@@ -40,3 +40,45 @@ export const fetchMovieActions = (page) => {
     }
   };
 };
+
+export const fetchMovieDetailAction = (id) => {
+  return async (next) => {
+    try {
+      const res = await requester({
+        method: "GET",
+        url: apiPath.MOVIE_DETAIL,
+        params: {
+          maPhim: id,
+        },
+      });
+      console.log(res.data.content);
+      next({
+        type: actions.SET_MOVIE_DETAIL,
+        payload: res.data.content,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const fecthMovieScheduleAction = (id) => {
+  return async (next) => {
+    try {
+      const res = await requester({
+        method: "GET",
+        url: apiPath.MOVIE_SCHEDULE,
+        params: {
+          maPhim: id,
+        },
+      });
+      console.log(res.data.content);
+      next({
+        type: actions.SET_MOVIE_SCHEDULE,
+        payload: res.data.content,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

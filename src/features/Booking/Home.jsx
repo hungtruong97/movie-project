@@ -1,4 +1,3 @@
-import Header from "components/Header";
 import React from "react";
 import HomeCarousel from "./components/HomeCarousel";
 import { useEffect } from "react";
@@ -17,7 +16,6 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <Header />
       <HomeCarousel />
       <MovieList />
     </div>
